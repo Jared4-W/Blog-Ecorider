@@ -3,171 +3,443 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta name="theme-color" content="#084c27">
+    <meta name="description" content="Conoce Eco Rider, un videojuego de conducción, obstáculos y aventuras.">
+
     <title>Eco Rider</title>
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="./style.css">
     <link rel="manifest" href="./manifest.json">
     <link rel="icon" href="./iconos E-R/Icono-192.png" type="image/png">
 </head>
+
 <body>
 
-    <!-- Barra de navegación -->
+    <!-- BARRA DE NAVEGACIÓN -->
     <header>
-        <nav class="navbar">
-            <div class="logo">
+        <nav class="navbar" aria-label="Navegación principal">
+
+            <a href="#inicio" class="logo">
                 ECO RIDER
-            </div>
+            </a>
+
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#juego">¿De qué trata?</a></li>
                 <li><a href="#objetivo">Objetivo</a></li>
                 <li><a href="#jugar">Cómo jugar</a></li>
             </ul>
+
         </nav>
     </header>
 
+
     <main>
-        <!-- Inicio -->
+
+        <!-- INICIO -->
         <section class="hero" id="inicio">
+
             <div class="hero-content">
+
                 <h1>¡A TODA VELOCIDAD!</h1>
-                <h2></h2>
-                <p>
+
+                <p class="hero-description">
                     Prepárate para conducir, esquivar obstáculos,
                     recorrer diferentes escenarios y conseguir
                     la mayor cantidad de puntos posible.
                 </p>
+
                 <a href="#juego" class="hero-button">
                     CONOCE EL JUEGO
                 </a>
+
             </div>
+
         </section>
 
-        <!-- ¿De qué trata? -->
+
+        <!-- ¿DE QUÉ TRATA? -->
         <section id="juego">
+
             <div class="container">
+
                 <div class="section-title">
+
                     <h2>¿De qué trata?</h2>
+
                     <p>
                         Es un videojuego de conducción y aventura
                         donde tendrás que demostrar tus habilidades
                         mientras recorres una carretera llena de retos.
                     </p>
+
                 </div>
+
+
                 <div class="cards">
+
                     <article class="card">
-                        <div class="card-icon">🏎️</div>
+
+                        <img
+                            class="card-image"
+                            src="./images/conduce.png"
+                            alt="Vehículo de Eco Rider"
+                            width="240"
+                            height="160"
+                            loading="lazy"
+                        >
+
                         <h3>Conduce</h3>
-                        <p>Controla tu vehículo y recorre la carretera mientras avanzas por el escenario.</p>
+
+                        <p>
+                            Controla tu vehículo y recorre la carretera
+                            mientras avanzas por el escenario.
+                        </p>
+
                     </article>
+
+
                     <article class="card">
-                        <div class="card-icon">🚧</div>
+
+                        <img
+                            class="card-image"
+                            src="./images/esquiva.png"
+                            alt="Obstáculos de la carretera"
+                            width="240"
+                            height="160"
+                            loading="lazy"
+                        >
+
                         <h3>Esquiva</h3>
-                        <p>Evita vehículos, obstáculos y elementos del camino para mantenerte en la carrera.</p>
+
+                        <p>
+                            Evita vehículos, obstáculos y elementos
+                            del camino para mantenerte en la carrera.
+                        </p>
+
                     </article>
+
+
                     <article class="card">
-                        <div class="card-icon">⭐</div>
+
+                        <img
+                            class="card-image"
+                            src="./images/puntos.png"
+                            alt="Objetos para conseguir puntos"
+                            width="240"
+                            height="160"
+                            loading="lazy"
+                        >
+
                         <h3>Consigue puntos</h3>
-                        <p>Recoge objetos y consigue puntos mientras avanzas para intentar superar tu mejor resultado.</p>
+
+                        <p>
+                            Recoge objetos y consigue puntos mientras
+                            avanzas para intentar superar tu mejor resultado.
+                        </p>
+
                     </article>
+
                 </div>
+
             </div>
+
         </section>
 
-        <!-- Objetivo -->
+
+        <!-- OBJETIVO -->
         <section class="objective" id="objetivo">
+
             <div class="container">
+
                 <div class="section-title">
                     <h2>¿Cuál es el objetivo?</h2>
                 </div>
+
                 <div class="objective-box">
+
                     <h3>¡Llega lo más lejos posible!</h3>
+
                     <p>
                         El objetivo principal es avanzar por la carretera
                         durante el mayor tiempo posible, evitar las
                         colisiones y conseguir la mayor cantidad de puntos.
                     </p>
-                    <br>
+
                     <p>
                         Mientras más avances y más objetos recolectes,
                         mayor será tu puntuación.
                     </p>
+
                 </div>
+
             </div>
+
         </section>
 
-        <!-- Características -->
-        <section>
+
+        <!-- CARACTERÍSTICAS -->
+        <section id="caracteristicas">
+
             <div class="container">
+
                 <div class="section-title">
+
                     <h2>¡Prepárate para el reto!</h2>
+
                     <p>
                         El juego está pensado para ofrecer una experiencia
                         sencilla de entender, pero cada vez más desafiante.
                     </p>
+
                 </div>
+
+
                 <div class="cards">
+
+                    <!-- TARJETA DE ESCENARIOS -->
                     <article class="card">
-                        <div class="card-icon">🌆</div>
+
+                        <div
+                            class="feature-gallery"
+                            role="group"
+                            aria-label="Imágenes de los diferentes escenarios"
+                        >
+
+                            <img
+                                src="./images/ruta1.png"
+                                alt="Primer escenario de Eco Rider"
+                                width="240"
+                                height="160"
+                                loading="lazy"
+                            >
+
+                            <img
+                                src="./images/ruta2.png"
+                                alt="Segundo escenario de Eco Rider"
+                                width="240"
+                                height="160"
+                                loading="lazy"
+                            >
+
+                            <img
+                                src="./images/ruta3.png"
+                                alt="Tercer escenario de Eco Rider"
+                                width="240"
+                                height="160"
+                                loading="lazy"
+                            >
+
+                        </div>
+
                         <h3>Diferentes escenarios</h3>
-                        <p>Recorre diferentes ambientes y descubre nuevos lugares durante la partida.</p>
+
+                        <p>
+                            Recorre diferentes ambientes y descubre
+                            nuevos lugares durante la partida.
+                        </p>
+
                     </article>
+
+
+                    <!-- TARJETA DE VEHÍCULOS -->
                     <article class="card">
-                        <div class="card-icon">🚗</div>
+
+                        <div
+                            class="feature-gallery"
+                            role="group"
+                            aria-label="Imágenes de los vehículos disponibles"
+                        >
+
+                            <img
+                                src="./images/Moto.png"
+                                alt="Primer vehículo seleccionable"
+                                width="240"
+                                height="160"
+                                loading="lazy"
+                            >
+
+                            <img
+                                src="./images/Auto_4.png"
+                                alt="Segundo vehículo seleccionable"
+                                width="240"
+                                height="160"
+                                loading="lazy"
+                            >
+
+                            <img
+                                src="./images/Auto_5.png"
+                                alt="Tercer vehículo seleccionable"
+                                width="240"
+                                height="160"
+                                loading="lazy"
+                            >
+
+                        </div>
+
                         <h3>Elige tu vehículo</h3>
-                        <p>Selecciona el vehículo que quieras utilizar y prepárate para comenzar la aventura.</p>
+
+                        <p>
+                            Selecciona el vehículo que quieras utilizar
+                            y prepárate para comenzar la aventura.
+                        </p>
+
                     </article>
+
+
+                    <!-- TARJETA DE PUNTUACIÓN -->
                     <article class="card">
-                        <div class="card-icon">🏆</div>
+
+                        <div
+                            class="feature-gallery"
+                            role="group"
+                            aria-label="Imágenes relacionadas con los puntos y récords"
+                        >
+
+                            <img
+                                src="./images/record1.png"
+                                alt="Primera imagen de la puntuación"
+                                width="240"
+                                height="160"
+                                loading="lazy"
+                            >
+
+                            <img
+                                src="./images/record2.png"
+                                alt="Segunda imagen de la puntuación"
+                                width="240"
+                                height="160"
+                                loading="lazy"
+                            >
+
+                            <img
+                                src="./images/record3.png"
+                                alt="Tercera imagen de la puntuación"
+                                width="240"
+                                height="160"
+                                loading="lazy"
+                            >
+
+                        </div>
+
                         <h3>Supera tu puntuación</h3>
-                        <p>Intenta conseguir cada vez más puntos y superar tus propios resultados.</p>
+
+                        <p>
+                            Intenta conseguir cada vez más puntos
+                            y superar tus propios resultados.
+                        </p>
+
                     </article>
+
                 </div>
+
             </div>
+
         </section>
 
-        <!-- Cómo jugar -->
+
+        <!-- CÓMO JUGAR -->
         <section id="jugar">
+
             <div class="container">
+
                 <div class="section-title">
+
                     <h2>¿Cómo se juega?</h2>
+
                     <p>Comenzar es muy sencillo.</p>
+
                 </div>
+
+
                 <div class="steps">
+
                     <div class="step">
+
                         <div class="step-number">1</div>
+
                         <h3>Elige tu vehículo</h3>
-                        <p>Selecciona el vehículo con el que quieres comenzar la partida.</p>
+
+                        <p>
+                            Selecciona el vehículo con el que
+                            quieres comenzar la partida.
+                        </p>
+
                     </div>
+
+
                     <div class="step">
+
                         <div class="step-number">2</div>
+
                         <h3>¡Conduce!</h3>
-                        <p>Avanza por la carretera y controla tu vehículo para evitar los peligros.</p>
+
+                        <p>
+                            Avanza por la carretera y controla
+                            tu vehículo para evitar los peligros.
+                        </p>
+
                     </div>
+
+
                     <div class="step">
+
                         <div class="step-number">3</div>
+
                         <h3>Consigue puntos</h3>
-                        <p>Recoge objetos, evita accidentes y consigue la mayor puntuación posible.</p>
+
+                        <p>
+                            Recoge objetos, evita accidentes
+                            y consigue la mayor puntuación posible.
+                        </p>
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
 
-        <!-- Invitación final -->
+
+        <!-- DESCARGA -->
         <section class="download-section">
-            <h2>¿Estás listo para conducir?</h2>
-            <p>Descarga el videojuego y comienza tu aventura sobre ruedas.</p>
-            <a href="descarga/Videojuego.zip" class="download-button" download>
-                Descargar videojuego
-            </a>
+
+            <div class="container">
+
+                <h2>¿Estás listo para conducir?</h2>
+
+                <p>
+                    Descarga el videojuego y comienza tu aventura sobre ruedas.
+                </p>
+
+                <a
+                    href="./descarga/Videojuego.zip"
+                    class="download-button"
+                    download
+                >
+                    Descargar videojuego
+                </a>
+
+            </div>
+
         </section>
+
     </main>
 
-    <!-- Pie de página -->
+
+    <!-- PIE DE PÁGINA -->
     <footer>
-        <p>© 2026 Eco Rider. Todos los derechos reservados.</p>
+
+        <p>
+            © 2026 Eco Rider. Todos los derechos reservados.
+        </p>
+
     </footer>
 
-    <script src="script.js"></script>
+
+    <script src="./script.js"></script>
+
 </body>
 </html>
