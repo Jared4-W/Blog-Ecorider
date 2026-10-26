@@ -1,4 +1,3 @@
-
 /* =========================
    CONFIGURACIÓN GENERAL
    ========================= */
@@ -92,7 +91,6 @@ header {
     overflow: hidden;
 
     background-color: #168a45;
-
     background-image: url("./images/fondo.png");
 
     background-size: cover;
@@ -245,9 +243,7 @@ section {
 
 .cards {
     display: grid;
-
     grid-template-columns: repeat(3, minmax(0, 1fr));
-
     gap: 25px;
     align-items: stretch;
 }
@@ -311,7 +307,6 @@ section {
 
 .feature-gallery {
     display: grid;
-
     grid-template-columns: repeat(3, minmax(0, 1fr));
 
     gap: 10px;
@@ -331,7 +326,6 @@ section {
     object-position: center;
 
     padding: 5px;
-
     background: #f3f8f4;
     border-radius: 10px;
 }
@@ -341,19 +335,6 @@ section {
    TARJETAS VERTICALES
    DE CARACTERÍSTICAS
    ========================= */
-
-/*
-   Este cambio afecta exclusivamente a la sección
-   "¡Prepárate para el reto!".
-
-   Las tres tarjetas se colocan en una sola columna:
-   1. Diferentes escenarios.
-   2. Elige tu vehículo.
-   3. Supera tu puntuación.
-
-   Las tarjetas de las demás secciones conservan
-   su distribución original.
-*/
 
 #caracteristicas .cards {
     grid-template-columns: minmax(0, 1fr);
@@ -372,9 +353,6 @@ section {
     min-width: 0;
 }
 
-
-/* Galería de tres imágenes por tarjeta */
-
 #caracteristicas .feature-gallery {
     grid-template-columns: repeat(3, minmax(0, 1fr));
 
@@ -383,10 +361,6 @@ section {
     width: 100%;
     margin-bottom: 24px;
 }
-
-
-/* Imágenes más grandes porque las tarjetas
-   ahora ocupan una fila completa */
 
 #caracteristicas .feature-gallery img {
     width: 100%;
@@ -442,9 +416,7 @@ section {
 
 .steps {
     display: grid;
-
     grid-template-columns: repeat(3, minmax(0, 1fr));
-
     gap: 25px;
 }
 
@@ -536,6 +508,100 @@ section {
 
 
 /* =========================
+   NUEVA FRANJA DE LA CAMIONETA
+   ========================= */
+
+/*
+   Esta franja se encuentra entre la sección de
+   descarga y el pie de página.
+
+   Color exacto: #168A45.
+*/
+
+.truck-animation-section {
+    position: relative;
+
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    background-color: #168a45;
+
+    overflow: hidden;
+}
+
+
+/* Área por la que pasará la camioneta */
+
+.truck-track {
+    position: relative;
+
+    width: 100%;
+    height: clamp(76px, 10vw, 120px);
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+}
+
+
+/* Imagen de la camioneta */
+
+.truck-sprite {
+    position: absolute;
+
+    left: 0;
+    bottom: 2px;
+
+    display: block;
+
+    width: clamp(100px, 16vw, 190px);
+    height: clamp(48px, 8vw, 95px);
+
+    object-fit: contain;
+    object-position: center bottom;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateX(-100%);
+
+    pointer-events: none;
+    user-select: none;
+}
+
+
+/* Animación de 15 segundos al pulsar Descargar */
+
+.truck-track.is-playing .truck-sprite {
+    visibility: visible;
+
+    animation: camionetaCruzar 15s linear forwards;
+}
+
+
+/* Trayectoria desde fuera del lado izquierdo
+   hasta fuera del lado derecho */
+
+@keyframes camionetaCruzar {
+
+    0% {
+        left: 0;
+        transform: translateX(-100%);
+        opacity: 1;
+    }
+
+    100% {
+        left: 100%;
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================
    PIE DE PÁGINA
    ========================= */
 
@@ -596,9 +662,6 @@ footer p {
         height: clamp(80px, 15vw, 125px);
     }
 
-    /* Mantener las tarjetas de características
-       verticales y sus galerías adaptables. */
-
     #caracteristicas .cards {
         grid-template-columns: minmax(0, 1fr);
         gap: 22px;
@@ -619,6 +682,17 @@ footer p {
 
     .objective-box {
         padding: 30px 20px;
+    }
+
+    /* Franja de la camioneta */
+
+    .truck-track {
+        height: clamp(76px, 12vw, 100px);
+    }
+
+    .truck-sprite {
+        width: clamp(100px, 20vw, 165px);
+        height: clamp(48px, 10vw, 80px);
     }
 }
 
@@ -691,9 +765,6 @@ footer p {
         border-radius: 8px;
     }
 
-    /* Ajustes específicos de las tres tarjetas
-       verticales en las pantallas de celular. */
-
     #caracteristicas .cards {
         grid-template-columns: minmax(0, 1fr);
         gap: 22px;
@@ -724,6 +795,18 @@ footer p {
 
     .objective-box p {
         font-size: 1rem;
+    }
+
+    /* Franja de animación en teléfonos */
+
+    .truck-track {
+        height: 76px;
+    }
+
+    .truck-sprite {
+        width: clamp(90px, 24vw, 125px);
+        height: 62px;
+        bottom: 2px;
     }
 }
 
