@@ -19,7 +19,7 @@ const ARCHIVOS_APP = [
 
 // Imágenes que se almacenarán al visitarlas
 const IMAGENES = [
-    "./images/fondo.png",
+    "./images/Fondo.png",
     "./images/conduce.png",
     "./images/esquiva.png",
     "./images/puntos.png",
