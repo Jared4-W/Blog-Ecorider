@@ -203,7 +203,7 @@ h2 span {
     width: 100%;
     aspect-ratio: 16 / 9;
     flex-shrink: 0;
-    background-image: url("./images/fondo.png");
+    background-image: url("./images/Fondo.png");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
