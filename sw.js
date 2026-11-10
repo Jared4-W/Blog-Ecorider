@@ -1,178 +1,304 @@
-const CACHE_NAME = "eco-rider-v4";
 
+"use strict";
+
+// ========================================
+// CONFIGURACIÓN DEL SERVICE WORKER
+// ========================================
+
+const CACHE_NAME = "eco-rider-v5";
+const CACHE_IMAGES = "eco-rider-images-v5";
+
+// Archivos esenciales de la aplicación
 const ARCHIVOS_APP = [
     "./",
     "./index.html",
     "./style.css",
     "./script.js",
-    "./manifest.json",
+    "./manifest.json"
+];
+
+// Imágenes que se almacenarán al visitarlas
+const IMAGENES = [
+    "./images/fondo.png",
+    "./images/conduce.png",
+    "./images/esquiva.png",
+    "./images/puntos.png",
+    "./images/ruta1.png",
+    "./images/ruta2.png",
+    "./images/ruta3.png",
+    "./images/Moto.png",
+    "./images/Auto_4.png",
+    "./images/Auto_5.png",
+    "./images/record1.png",
+    "./images/record2.png",
+    "./images/record3.png",
+    "./images/camioneta.png",
     "./iconos E-R/Icono-192.png",
     "./iconos E-R/Icono-512.png"
 ];
 
-
-// =========================
+// ========================================
 // INSTALACIÓN
-// =========================
+// ========================================
 
 self.addEventListener("install", (evento) => {
 
     evento.waitUntil(
+        (async () => {
 
-        caches.open(CACHE_NAME)
-            .then((cache) => {
+            const cache = await caches.open(CACHE_NAME);
 
-                return cache.addAll(ARCHIVOS_APP);
+            // Los archivos esenciales deben existir
+            await cache.addAll(ARCHIVOS_APP);
 
-            })
+            // Las imágenes se guardan individualmente.
+            // Si alguna falta, no bloquea la instalación.
+            const cacheImagenes = await caches.open(
+                CACHE_IMAGES
+            );
 
+            await Promise.allSettled(
+                IMAGENES.map(async (ruta) => {
+
+                    try {
+                        await cacheImagenes.add(ruta);
+                    } catch (error) {
+                        console.warn(
+                            "Imagen no disponible:",
+                            ruta,
+                            error
+                        );
+                    }
+
+                })
+            );
+
+            await self.skipWaiting();
+
+        })()
     );
-
-    self.skipWaiting();
 
 });
 
-
-// =========================
+// ========================================
 // ACTIVACIÓN
-// =========================
+// ========================================
 
 self.addEventListener("activate", (evento) => {
 
     evento.waitUntil(
+        (async () => {
 
-        caches.keys()
-            .then((nombresCaches) => {
+            const nombres = await caches.keys();
 
-                return Promise.all(
+            const cachesActuales = [
+                CACHE_NAME,
+                CACHE_IMAGES
+            ];
 
-                    nombresCaches
-                        .filter((nombre) => {
+            await Promise.all(
+                nombres
+                    .filter((nombre) => {
 
-                            return nombre !== CACHE_NAME;
+                        return (
+                            nombre.startsWith("eco-rider-") &&
+                            !cachesActuales.includes(nombre)
+                        );
 
-                        })
-                        .map((nombre) => {
+                    })
+                    .map((nombre) => {
 
-                            return caches.delete(nombre);
+                        return caches.delete(nombre);
 
-                        })
+                    })
+            );
 
-                );
+            await self.clients.claim();
 
-            })
-            .then(() => {
-
-                return self.clients.claim();
-
-            })
-
+        })()
     );
 
 });
 
-
-// =========================
-// SOLICITUDES
-// =========================
+// ========================================
+// SOLICITUDES DE RECURSOS
+// ========================================
 
 self.addEventListener("fetch", (evento) => {
 
     const solicitud = evento.request;
 
-    // Solo trabajamos con solicitudes GET
+    // Solo solicitudes GET
     if (solicitud.method !== "GET") {
-
         return;
-
     }
 
-    // Peticiones de imágenes
-    if (solicitud.destination === "image") {
+    const url = new URL(solicitud.url);
 
-        evento.respondWith(
-
-            caches.match(solicitud)
-                .then((respuestaCache) => {
-
-                    if (respuestaCache) {
-
-                        return respuestaCache;
-
-                    }
-
-                    return fetch(solicitud)
-                        .then((respuestaRed) => {
-
-                            if (
-                                !respuestaRed ||
-                                respuestaRed.status !== 200
-                            ) {
-
-                                return respuestaRed;
-
-                            }
-
-                            const copia = respuestaRed.clone();
-
-                            caches.open(CACHE_NAME)
-                                .then((cache) => {
-
-                                    cache.put(
-                                        solicitud,
-                                        copia
-                                    );
-
-                                });
-
-                            return respuestaRed;
-
-                        });
-
-                })
-
-        );
-
+    // No interceptar recursos externos
+    if (url.origin !== self.location.origin) {
         return;
-
     }
 
+    // ====================================
+    // VIDEO Y AUDIO
+    // ====================================
 
-    // Navegación HTML
+    // Permitir que el navegador gestione
+    // directamente las solicitudes Range.
+    // Evita devolver un MP4 completo cuando
+    // se espera una respuesta parcial 206.
+
+    if (
+        solicitud.destination === "video" ||
+        solicitud.destination === "audio" ||
+        solicitud.headers.has("range") ||
+        /\.(mp4|webm|mp3|wav|ogg)$/i.test(
+            url.pathname
+        )
+    ) {
+        return;
+    }
+
+    // ====================================
+    // NAVEGACIÓN HTML
+    // ====================================
+
     if (solicitud.mode === "navigate") {
 
         evento.respondWith(
+            (async () => {
 
-            fetch(solicitud)
-                .catch(() => {
+                try {
 
-                    return caches.match("./index.html");
+                    // Priorizar versión actualizada
+                    const respuesta = await fetch(
+                        solicitud
+                    );
 
-                })
+                    if (respuesta.ok) {
 
-        );
+                        const cache = await caches.open(
+                            CACHE_NAME
+                        );
 
-        return;
+                        await cache.put(
+                            solicitud,
+                            respuesta.clone()
+                        );
 
-    }
+                    }
 
+                    return respuesta;
 
-    // CSS, JavaScript y otros recursos
-    evento.respondWith(
+                } catch (error) {
 
-        caches.match(solicitud)
-            .then((respuestaCache) => {
+                    // Utilizar versión sin conexión
+                    const respuestaCache =
+                        await caches.match(solicitud);
 
-                if (respuestaCache) {
-
-                    return respuestaCache;
+                    return (
+                        respuestaCache ||
+                        await caches.match("./index.html") ||
+                        Response.error()
+                    );
 
                 }
 
-                return fetch(solicitud);
+            })()
+        );
 
-            })
+        return;
+    }
 
+    // ====================================
+    // IMÁGENES
+    // ====================================
+
+    if (solicitud.destination === "image") {
+
+        evento.respondWith(
+            (async () => {
+
+                const cache = await caches.open(
+                    CACHE_IMAGES
+                );
+
+                const respuestaCache =
+                    await cache.match(solicitud);
+
+                if (respuestaCache) {
+                    return respuestaCache;
+                }
+
+                try {
+
+                    const respuestaRed =
+                        await fetch(solicitud);
+
+                    if (respuestaRed.ok) {
+
+                        await cache.put(
+                            solicitud,
+                            respuestaRed.clone()
+                        );
+
+                    }
+
+                    return respuestaRed;
+
+                } catch (error) {
+
+                    return Response.error();
+
+                }
+
+            })()
+        );
+
+        return;
+    }
+
+    // ====================================
+    // CSS, JAVASCRIPT Y MANIFEST
+    // ====================================
+
+    evento.respondWith(
+        (async () => {
+
+            try {
+
+                // Buscar primero versión nueva
+                const respuesta = await fetch(
+                    solicitud
+                );
+
+                if (respuesta.ok) {
+
+                    const cache = await caches.open(
+                        CACHE_NAME
+                    );
+
+                    await cache.put(
+                        solicitud,
+                        respuesta.clone()
+                    );
+
+                }
+
+                return respuesta;
+
+            } catch (error) {
+
+                // Si no hay conexión, usar caché
+                const respuestaCache =
+                    await caches.match(solicitud);
+
+                return respuestaCache || Response.error();
+
+            }
+
+        })()
     );
 
 });

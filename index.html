@@ -1,471 +1,1249 @@
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="theme-color" content="#084c27">
-    <meta name="description" content="Conoce Eco Rider, un videojuego de conducción, obstáculos y aventuras.">
+    <meta name="theme-color" content="#071b15">
+    <meta name="description"
+          content="Eco Rider: conduce, esquiva obstáculos y supera tu récord.">
 
-    <title>Eco Rider</title>
+    <title>EcoRider | La aventura comienza aquí</title>
 
-    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./iconos E-R/Icono-192.png">
     <link rel="manifest" href="./manifest.json">
-    <link rel="icon" href="./iconos E-R/Icono-192.png" type="image/png">
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="./script.js" defer></script>
 </head>
 
 <body>
 
-    <!-- BARRA DE NAVEGACIÓN -->
-    <header>
-        <nav class="navbar" aria-label="Navegación principal">
+<!-- ======================================
+     MENÚ PRINCIPAL
+====================================== -->
 
-            <a href="#inicio" class="logo">
-                ECO RIDER
+<header class="site-header" id="top">
+
+    <nav class="navbar container">
+
+        <a class="logo" href="#inicio">
+            <span class="logo-symbol">✦</span>
+            ECO<span>RIDER</span>
+        </a>
+
+        <button class="menu-toggle"
+                type="button"
+                aria-label="Abrir menú"
+                aria-controls="main-menu"
+                aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-links" id="main-menu">
+
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#juego">El juego</a></li>
+            <li><a href="#caracteristicas">Características</a></li>
+            <li><a href="#videos">Gameplay</a></li>
+            <li><a href="#jugar">Cómo jugar</a></li>
+            <li><a href="#documentacion">Documentación</a></li>
+
+            <li>
+                <a class="nav-download" href="#descargar">
+                    Descargar ↗
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+<main>
+
+<!-- ======================================
+     1. PORTADA
+====================================== -->
+
+<section class="hero" id="inicio">
+
+    <div class="hero-shade"></div>
+
+    <div class="container hero-content reveal">
+
+        <span class="eyebrow">
+            <span class="pulse-dot"></span>
+            CONDUCCIÓN · AVENTURA · DESAFÍO
+        </span>
+
+        <h1>
+            EL CAMINO ES<br>
+            <em>TUYO.</em>
+        </h1>
+
+        <p class="hero-description">
+            Acelera, esquiva obstáculos y descubre nuevos escenarios.
+            Cada kilómetro es una oportunidad para superar tus límites.
+        </p>
+
+        <div class="hero-actions">
+
+            <a class="btn btn-primary" href="#descargar">
+                Descargar videojuego ↗
             </a>
 
-            <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#juego">¿De qué trata?</a></li>
-                <li><a href="#objetivo">Objetivo</a></li>
-                <li><a href="#jugar">Cómo jugar</a></li>
-            </ul>
+            <a class="btn btn-outline" href="#videos">
+                Ver gameplay ▶
+            </a>
 
-        </nav>
-    </header>
+        </div>
 
+        <div class="hero-bottom">
+            <span>01 / ECO RIDER</span>
+            <span>DESLIZA PARA EXPLORAR ↓</span>
+        </div>
 
-    <main>
+    </div>
 
-        <!-- INICIO -->
-        <section class="hero" id="inicio">
+</section>
 
-            <div class="hero-content">
+<!-- ======================================
+     2. DESCRIPCIÓN DEL VIDEOJUEGO
+====================================== -->
 
-                <h1>¡A TODA VELOCIDAD!</h1>
+<section class="section section-light" id="juego">
 
-                <p class="hero-description">
-                    Prepárate para conducir, esquivar obstáculos,
-                    recorrer diferentes escenarios y conseguir
-                    la mayor cantidad de puntos posible.
-                </p>
+    <div class="container">
 
-                <a href="#juego" class="hero-button">
-                    CONOCE EL JUEGO
-                </a>
+        <div class="section-heading reveal">
 
-            </div>
+            <span class="section-kicker">
+                DESCUBRE LA EXPERIENCIA
+            </span>
 
-        </section>
+            <h2>
+                No es solo conducir.<br>
+                <span>Es llegar más lejos.</span>
+            </h2>
 
+            <p>
+                EcoRider es un videojuego de conducción y aventura
+                en el que debes esquivar obstáculos, recoger puntos
+                y superar tus propios récords.
+            </p>
 
-        <!-- ¿DE QUÉ TRATA? -->
-        <section id="juego">
+            <p>
+                <strong>Historia:</strong>
+                [COMPLETAR CON LA HISTORIA REAL DEL JUEGO].
+            </p>
 
-            <div class="container">
+            <p>
+                <strong>Género:</strong>
+                Conducción y aventura.
+            </p>
 
-                <div class="section-title">
+            <p>
+                <strong>Público objetivo:</strong>
+                [INDICAR EDADES Y TIPO DE JUGADORES].
+            </p>
 
-                    <h2>¿De qué trata?</h2>
+        </div>
+
+        <div class="cards cards-three">
+
+            <article class="feature-card reveal">
+
+                <div class="feature-image">
+                    <img src="./images/conduce.png"
+                         alt="Vehículo de Eco Rider"
+                         loading="lazy">
+                </div>
+
+                <div class="feature-body">
+
+                    <span class="card-index">
+                        01 / CONDUCCIÓN
+                    </span>
+
+                    <h3>Conduce</h3>
 
                     <p>
-                        Es un videojuego de conducción y aventura
-                        donde tendrás que demostrar tus habilidades
-                        mientras recorres una carretera llena de retos.
+                        Controla tu vehículo y domina cada
+                        tramo de la carretera.
                     </p>
 
                 </div>
 
+            </article>
 
-                <div class="cards">
+            <article class="feature-card reveal">
 
-                    <article class="card">
-
-                        <img
-                            class="card-image"
-                            src="./images/conduce.png"
-                            alt="Vehículo de Eco Rider"
-                            width="240"
-                            height="160"
-                            loading="lazy"
-                        >
-
-                        <h3>Conduce</h3>
-
-                        <p>
-                            Controla tu vehículo y recorre la carretera
-                            mientras avanzas por el escenario.
-                        </p>
-
-                    </article>
-
-
-                    <article class="card">
-
-                        <img
-                            class="card-image"
-                            src="./images/esquiva.png"
-                            alt="Obstáculos de la carretera"
-                            width="240"
-                            height="160"
-                            loading="lazy"
-                        >
-
-                        <h3>Esquiva</h3>
-
-                        <p>
-                            Evita vehículos, obstáculos y elementos
-                            del camino para mantenerte en la carrera.
-                        </p>
-
-                    </article>
-
-
-                    <article class="card">
-
-                        <img
-                            class="card-image"
-                            src="./images/puntos.png"
-                            alt="Objetos para conseguir puntos"
-                            width="240"
-                            height="160"
-                            loading="lazy"
-                        >
-
-                        <h3>Consigue puntos</h3>
-
-                        <p>
-                            Recoge objetos y consigue puntos mientras
-                            avanzas para intentar superar tu mejor resultado.
-                        </p>
-
-                    </article>
-
+                <div class="feature-image">
+                    <img src="./images/esquiva.png"
+                         alt="Obstáculos del videojuego"
+                         loading="lazy">
                 </div>
 
-            </div>
+                <div class="feature-body">
 
-        </section>
+                    <span class="card-index">
+                        02 / REFLEJOS
+                    </span>
 
-
-        <!-- OBJETIVO -->
-        <section class="objective" id="objetivo">
-
-            <div class="container">
-
-                <div class="section-title">
-                    <h2>¿Cuál es el objetivo?</h2>
-                </div>
-
-                <div class="objective-box">
-
-                    <h3>¡Llega lo más lejos posible!</h3>
+                    <h3>Esquiva</h3>
 
                     <p>
-                        El objetivo principal es avanzar por la carretera
-                        durante el mayor tiempo posible, evitar las
-                        colisiones y conseguir la mayor cantidad de puntos.
-                    </p>
-
-                    <p>
-                        Mientras más avances y más objetos recolectes,
-                        mayor será tu puntuación.
+                        Evita vehículos y obstáculos para
+                        continuar tu recorrido.
                     </p>
 
                 </div>
 
-            </div>
+            </article>
 
-        </section>
+            <article class="feature-card reveal">
 
+                <div class="feature-image">
+                    <img src="./images/puntos.png"
+                         alt="Sistema de puntuación"
+                         loading="lazy">
+                </div>
 
-        <!-- CARACTERÍSTICAS -->
-        <section id="caracteristicas">
+                <div class="feature-body">
 
-            <div class="container">
+                    <span class="card-index">
+                        03 / RECOMPENSAS
+                    </span>
 
-                <div class="section-title">
-
-                    <h2>¡Prepárate para el reto!</h2>
+                    <h3>Consigue puntos</h3>
 
                     <p>
-                        El juego está pensado para ofrecer una experiencia
-                        sencilla de entender, pero cada vez más desafiante.
+                        Recoge objetos y busca superar
+                        tu mejor puntuación.
                     </p>
 
                 </div>
 
+            </article>
 
-                <div class="cards">
+        </div>
 
-                    <!-- DIFERENTES ESCENARIOS -->
-                    <article class="card">
+    </div>
 
-                        <div
-                            class="feature-gallery"
-                            role="group"
-                            aria-label="Imágenes de los diferentes escenarios"
-                        >
+</section>
 
-                            <img
-                                src="./images/ruta1.png"
-                                alt="Primer escenario de Eco Rider"
-                                width="240"
-                                height="160"
-                                loading="lazy"
-                            >
+<!-- ======================================
+     OBJETIVO DEL VIDEOJUEGO
+====================================== -->
 
-                            <img
-                                src="./images/ruta2.png"
-                                alt="Segundo escenario de Eco Rider"
-                                width="240"
-                                height="160"
-                                loading="lazy"
-                            >
+<section class="objective" id="objetivo">
 
-                            <img
-                                src="./images/ruta3.png"
-                                alt="Tercer escenario de Eco Rider"
-                                width="240"
-                                height="160"
-                                loading="lazy"
-                            >
+    <div class="container objective-layout">
 
-                        </div>
+        <div class="reveal">
 
-                        <h3>Diferentes escenarios</h3>
+            <span class="section-kicker">
+                TU MISIÓN
+            </span>
 
-                        <p>
-                            Recorre diferentes ambientes y descubre
-                            nuevos lugares durante la partida.
-                        </p>
+            <h2>
+                UN OBJETIVO.<br>
+                <span>INFINITOS RETOS.</span>
+            </h2>
 
-                    </article>
+        </div>
 
+        <div class="objective-copy reveal">
 
-                    <!-- ELIGE TU VEHÍCULO -->
-                    <article class="card">
+            <p>
+                El objetivo es sencillo:
+                <strong>llegar lo más lejos posible.</strong>
 
-                        <div
-                            class="feature-gallery"
-                            role="group"
-                            aria-label="Imágenes de los vehículos disponibles"
-                        >
+                Mantente en la carretera, evita las colisiones
+                y consigue todos los puntos que puedas.
+            </p>
 
-                            <img
-                                src="./images/vehiculo1.png"
-                                alt="Primer vehículo seleccionable"
-                                width="240"
-                                height="160"
-                                loading="lazy"
-                            >
+            <a class="text-link" href="#jugar">
+                Aprende a jugar ↗
+            </a>
 
-                            <img
-                                src="./images/vehiculo2.png"
-                                alt="Segundo vehículo seleccionable"
-                                width="240"
-                                height="160"
-                                loading="lazy"
-                            >
+        </div>
 
-                            <img
-                                src="./images/vehiculo3.png"
-                                alt="Tercer vehículo seleccionable"
-                                width="240"
-                                height="160"
-                                loading="lazy"
-                            >
+    </div>
 
-                        </div>
+</section>
 
-                        <h3>Elige tu vehículo</h3>
+<!-- ======================================
+     3 Y 5. CARACTERÍSTICAS Y GALERÍA
+====================================== -->
 
-                        <p>
-                            Selecciona el vehículo que quieras utilizar
-                            y prepárate para comenzar la aventura.
-                        </p>
+<section class="section section-dark" id="caracteristicas">
 
-                    </article>
+    <div class="container">
 
+        <div class="section-heading reveal">
 
-                    <!-- SUPERA TU PUNTUACIÓN -->
-                    <article class="card">
+            <span class="section-kicker">
+                MÁS QUE UNA CARRERA
+            </span>
 
-                        <div
-                            class="feature-gallery"
-                            role="group"
-                            aria-label="Imágenes relacionadas con los puntos y récords"
-                        >
+            <h2>
+                Explora cada<br>
+                <span>posibilidad.</span>
+            </h2>
 
-                            <img
-                                src="./images/record1.png"
-                                alt="Primera imagen de la puntuación"
-                                width="240"
-                                height="160"
-                                loading="lazy"
-                            >
+            <p>
+                Diferentes escenarios, vehículos para elegir
+                y nuevos récords por conquistar.
+            </p>
 
-                            <img
-                                src="./images/record2.png"
-                                alt="Segunda imagen de la puntuación"
-                                width="240"
-                                height="160"
-                                loading="lazy"
-                            >
+        </div>
 
-                            <img
-                                src="./images/record3.png"
-                                alt="Tercera imagen de la puntuación"
-                                width="240"
-                                height="160"
-                                loading="lazy"
-                            >
+        <div class="showcase-list">
 
-                        </div>
+            <!-- ESCENARIOS -->
 
-                        <h3>Supera tu puntuación</h3>
+            <article class="showcase reveal">
 
-                        <p>
-                            Intenta conseguir cada vez más puntos
-                            y superar tus propios resultados.
-                        </p>
+                <div class="showcase-copy">
 
-                    </article>
+                    <span class="card-index">
+                        01 — EXPLORACIÓN
+                    </span>
+
+                    <h3>Diferentes escenarios</h3>
+
+                    <p>
+                        Recorre ambientes distintos y descubre
+                        nuevos lugares mientras avanzas.
+                    </p>
 
                 </div>
 
-            </div>
+                <div class="image-strip">
 
-        </section>
+                    <img src="./images/ruta1.png"
+                         alt="Escenario uno"
+                         loading="lazy">
 
+                    <img src="./images/ruta2.png"
+                         alt="Escenario dos"
+                         loading="lazy">
 
-        <!-- CÓMO JUGAR -->
-        <section id="jugar">
-
-            <div class="container">
-
-                <div class="section-title">
-
-                    <h2>¿Cómo se juega?</h2>
-
-                    <p>Comenzar es muy sencillo.</p>
+                    <img src="./images/ruta3.png"
+                         alt="Escenario tres"
+                         loading="lazy">
 
                 </div>
 
+            </article>
 
-                <div class="steps">
+            <!-- VEHÍCULOS -->
 
-                    <div class="step">
+            <article class="showcase reveal">
 
-                        <div class="step-number">1</div>
+                <div class="showcase-copy">
 
-                        <h3>Elige tu vehículo</h3>
+                    <span class="card-index">
+                        02 — PERSONALIZACIÓN
+                    </span>
 
-                        <p>
-                            Selecciona el vehículo con el que
-                            quieres comenzar la partida.
-                        </p>
+                    <h3>Elige tu vehículo</h3>
 
-                    </div>
-
-
-                    <div class="step">
-
-                        <div class="step-number">2</div>
-
-                        <h3>¡Conduce!</h3>
-
-                        <p>
-                            Avanza por la carretera y controla
-                            tu vehículo para evitar los peligros.
-                        </p>
-
-                    </div>
-
-
-                    <div class="step">
-
-                        <div class="step-number">3</div>
-
-                        <h3>Consigue puntos</h3>
-
-                        <p>
-                            Recoge objetos, evita accidentes
-                            y consigue la mayor puntuación posible.
-                        </p>
-
-                    </div>
+                    <p>
+                        Selecciona tu vehículo favorito
+                        y comienza tu desafío.
+                    </p>
 
                 </div>
 
-            </div>
+                <div class="image-strip">
 
-        </section>
+                    <img src="./images/Moto.png"
+                         alt="Motocicleta"
+                         loading="lazy">
 
+                    <img src="./images/Auto_4.png"
+                         alt="Vehículo dos"
+                         loading="lazy">
 
-        <!-- DESCARGA DEL VIDEOJUEGO -->
-        <section class="download-section">
+                    <img src="./images/Auto_5.png"
+                         alt="Vehículo tres"
+                         loading="lazy">
 
-            <div class="container">
+                </div>
 
-                <h2>¿Estás listo para conducir?</h2>
+            </article>
 
-                <p>
-                    Descarga el videojuego y comienza tu aventura sobre ruedas.
-                </p>
+            <!-- RÉCORDS -->
 
-                <a
-                    href="./descarga/Videojuego.zip"
-                    class="download-button"
-                    download
+            <article class="showcase reveal">
+
+                <div class="showcase-copy">
+
+                    <span class="card-index">
+                        03 — SUPERACIÓN
+                    </span>
+
+                    <h3>Rompe tu récord</h3>
+
+                    <p>
+                        Cada intento cuenta. Consigue más puntos
+                        y supera tus resultados anteriores.
+                    </p>
+
+                </div>
+
+                <div class="image-strip">
+
+                    <img src="./images/record1.png"
+                         alt="Puntuación uno"
+                         loading="lazy">
+
+                    <img src="./images/record2.png"
+                         alt="Puntuación dos"
+                         loading="lazy">
+
+                    <img src="./images/record3.png"
+                         alt="Puntuación tres"
+                         loading="lazy">
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ======================================
+     4. TRÁILER DEL VIDEOJUEGO
+====================================== -->
+
+<section class="section video-section" id="videos">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <span class="section-kicker">
+                MIRA LA ACCIÓN
+            </span>
+
+            <h2>
+                La aventura<br>
+                <span>en movimiento.</span>
+            </h2>
+
+            <p>
+                Descubre cómo se vive Eco Rider antes
+                de comenzar tu propia partida.
+            </p>
+
+        </div>
+
+        <div class="video-box reveal">
+
+            <div class="video-frame">
+
+                <video
+                    id="videoEcoRider"
+                    class="eco-video"
+                    controls
+                    preload="metadata"
+                    playsinline
                 >
-                    Descargar videojuego
-                </a>
+
+                    <source
+                        src="./videos/EcoRider.mp4"
+                        type="video/mp4"
+                    >
+
+                    Tu navegador no admite videos HTML5.
+
+                </video>
 
             </div>
 
-        </section>
+            <div class="video-caption">
 
+                <div>
 
-        <!-- FRANJA VERDE CON ANIMACIÓN DE LA CAMIONETA -->
-        <div
-            class="truck-animation-section"
-            aria-label="Animación de la camioneta de Eco Rider"
-        >
+                    <span class="card-index">
+                        VIDEO OFICIAL
+                    </span>
 
-            <div
-                class="truck-track"
-                id="truckTrack"
-                aria-hidden="true"
-            >
+                    <h3>EcoRider — Gameplay</h3>
 
-                <img
-                    src="./images/camioneta.png"
-                    alt=""
-                    class="truck-sprite"
-                    id="truckSprite"
-                    width="512"
-                    height="256"
-                >
+                </div>
+
+                <span class="video-tag">
+                    ▶ EN ACCIÓN
+                </span>
 
             </div>
 
         </div>
 
-    </main>
+    </div>
 
+</section>
 
-    <!-- PIE DE PÁGINA -->
-    <footer>
+<!-- ======================================
+     6. TUTORIAL Y CONTROLES
+====================================== -->
+
+<section class="section section-light" id="jugar">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <span class="section-kicker">
+                COMIENZA EN TRES PASOS
+            </span>
+
+            <h2>
+                Fácil de aprender.<br>
+                <span>Difícil de dominar.</span>
+            </h2>
+
+        </div>
+
+        <div class="steps">
+
+            <article class="step reveal">
+
+                <span class="step-number">01</span>
+
+                <h3>Elige tu vehículo</h3>
+
+                <p>
+                    Selecciona tu favorito para comenzar.
+                </p>
+
+            </article>
+
+            <article class="step reveal">
+
+                <span class="step-number">02</span>
+
+                <h3>¡Conduce!</h3>
+
+                <p>
+                    Avanza por la carretera y evita los peligros.
+                </p>
+
+            </article>
+
+            <article class="step reveal">
+
+                <span class="step-number">03</span>
+
+                <h3>Consigue puntos</h3>
+
+                <p>
+                    Recoge objetos y supera tu récord.
+                </p>
+
+            </article>
+
+        </div>
+
+        <div class="info-panel reveal">
+
+            <h3>Reglas y controles</h3>
+
+            <p>
+                Evita colisiones, recoge objetos y busca
+                obtener la mayor puntuación posible.
+            </p>
+
+            <p>
+                <strong>Controles:</strong>
+                ["A": Izquierda
+                 "D": Derecha].
+            </p>
+
+            <p>
+                <strong>Fin de partida:</strong>
+                [Chocar con un vehiculo, obstaculo o cnstruccion].
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ======================================
+     7. DESCARGA DEL VIDEOJUEGO
+====================================== -->
+
+<section class="download-section" id="descargar">
+
+    <div class="container download-content reveal">
+
+        <span class="section-kicker">
+            TU PRÓXIMA AVENTURA
+        </span>
+
+        <h2>
+            ¿LISTO PARA<br>
+            <em>ARRANCAR?</em>
+        </h2>
 
         <p>
-            © 2026 Eco Rider. Todos los derechos reservados.
+            La carretera te espera.
+            Descarga Eco Rider y comienza a jugar.
         </p>
 
-    </footer>
+        <a href="./descarga/Videojuego.zip"
+           class="btn btn-primary download-button"
+           download>
+            ↓ Descargar videojuego
+        </a>
+
+        <span class="download-note">
+            Archivo ZIP del videojuego
+        </span>
+
+        <div class="download-meta">
+
+            <span>
+                <b>Versión:</b> 1.0
+            </span>
+
+            <span>
+                <b>Plataforma:</b> Windows
+            </span>
+
+            <span>
+                <b>Tamaño:</b> 40MB
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ======================================
+     DOCUMENTACIÓN ACADÉMICA
+====================================== -->
+
+<section class="section section-light" id="documentacion">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <span class="section-kicker">
+                INFORMACIÓN DEL PROYECTO
+            </span>
+
+            <h2>
+                Todo sobre <span>EcoRider.</span>
+            </h2>
+
+            <p>
+                Información técnica, académica y legal
+                relacionada con el desarrollo del videojuego.
+            </p>
+
+        </div>
+
+        <div class="doc-grid">
+
+            <!-- 8. REQUISITOS -->
+
+            <article class="doc-card reveal" id="requisitos">
+
+                <span class="card-index">
+                    08 / REQUISITOS
+                </span>
+
+                <h3>Requisitos mínimos</h3>
+
+                <p>
+                    <b>Sistema operativo:</b> Windows 10
+                </p>
+
+                <p>
+                    <b>Procesador:</b> Intel Pentium
+                </p>
+
+                <p>
+                    <b>Memoria RAM:</b> 6GB
+                </p>
+
+                <p>
+                    <b>Tarjeta gráfica:</b> Intel HD Graphics 610
+                </p>
+
+                <p>
+                    <b>Espacio disponible:</b> 100MB
+                </p>
+
+            </article>
+
+            <!-- 9. INSTALACIÓN -->
+
+            <article class="doc-card reveal" id="instalacion">
+
+                <span class="card-index">
+                    09 / INSTALACIÓN
+                </span>
+
+                <h3>Instalación y ejecución</h3>
+
+                <ol>
+
+                    <li>
+                        Descarga el archivo ZIP desde esta página.
+                    </li>
+
+                    <li>
+                        Extrae su contenido en una carpeta
+                        de tu computadora.
+                    </li>
+
+                    <li>
+                        Ejecuta el archivo Ecorider.exe
+                    </li>
+
+                </ol>
+
+            </article>
+
+            <!-- 10. DESARROLLO -->
+
+<article class="doc-card reveal" id="desarrollo">
+
+    <span class="card-index">
+        10 / DESARROLLO
+    </span>
+
+    <h3>Bitácora por sprints</h3>
+
+    <!-- SPRINT 1 -->
+    <div class="sprint">
+        <b>Sprint 1: Análisis y planificación</b>
+
+        <p>
+            <strong>Periodo:</strong>
+            4/5/2026 - 16/05/2026
+        </p>
+
+        <p>
+            <strong>Objetivo:</strong>
+            Definir los requerimientos, alcance y
+            características principales de Eco Rider.
+        </p>
+
+        <p>
+            <strong>Actividades:</strong>
+            Investigación de herramientas de desarrollo,
+            definición de la temática ambiental,
+            planificación de funcionalidades y
+            distribución de responsabilidades.
+        </p>
+
+        <p>
+            <strong>Resultados:</strong>
+            Se establecieron los objetivos del proyecto,
+            las funcionalidades principales y un plan
+            de trabajo para su desarrollo.
+        </p>
+    </div>
+
+    <!-- SPRINT 2 -->
+    <div class="sprint">
+        <b>Sprint 2: Diseño del videojuego</b>
+
+        <p>
+            <strong>Periodo:</strong>
+            18/05/2026 - 01/06/2026
+        </p>
+
+        <p>
+            <strong>Objetivo:</strong>
+            Diseñar los elementos visuales y
+            la estructura del videojuego.
+        </p>
+
+        <p>
+            <strong>Actividades:</strong>
+            Diseño de escenarios, personajes,
+            elementos gráficos e interfaz de usuario,
+            utilizando herramientas de diseño
+            e inteligencia artificial como apoyo.
+        </p>
+
+        <p>
+            <strong>Resultados:</strong>
+            Se obtuvieron los recursos gráficos
+            y la propuesta visual necesaria
+            para comenzar la implementación.
+        </p>
+    </div>
+
+    <!-- SPRINT 3 -->
+    <div class="sprint">
+        <b>Sprint 3: Desarrollo del videojuego</b>
+
+        <p>
+            <strong>Periodo:</strong>
+            8/06/2026 - 3/12/2026
+        </p>
+
+        <p>
+            <strong>Objetivo:</strong>
+            Implementar las mecánicas y
+            funcionalidades principales de Eco Rider.
+        </p>
+
+        <p>
+            <strong>Actividades:</strong>
+            Integración de escenarios, programación
+            de controles, implementación de mecánicas
+            de juego y realización de pruebas
+            para detectar errores.
+        </p>
+
+        <p>
+            <strong>Resultados:</strong>
+            Se obtuvo una versión funcional
+            del videojuego con sus mecánicas
+            principales implementadas.
+        </p>
+    </div>
+
+    <!-- SPRINT 4 -->
+    <div class="sprint">
+        <b>Sprint 4: Desarrollo de la página web</b>
+
+        <p>
+            <strong>Periodo:</strong>
+            10/09/2026 - 13/11/2026
+        </p>
+
+        <p>
+            <strong>Objetivo:</strong>
+            Desarrollar una página web profesional
+            para presentar y distribuir Eco Rider.
+        </p>
+
+        <p>
+            <strong>Actividades:</strong>
+            Desarrollo de la estructura HTML,
+            diseño con CSS e implementación
+            de funcionalidades con JavaScript.
+            Integración de imágenes, video
+            demostrativo y descarga del videojuego.
+        </p>
+
+        <p>
+            <strong>Resultados:</strong>
+            Se desarrolló una página web
+            adaptable a diferentes dispositivos,
+            con información del proyecto.
+        </p>
+    </div>
+
+</article>
 
 
-    <script src="./script.js"></script>
+            </article>
+
+            <!-- 11. EQUIPO -->
+
+            <article class="doc-card reveal" id="equipo">
+
+                <span class="card-index">
+                    11 / EQUIPO
+                </span>
+
+                <h3>Integrantes</h3>
+
+                <p>
+                    Jared Chavez Hernandez — Programador 
+                </p>
+                <p>
+                    David Martínez Quinatanar — Diseñador 
+                </p>
+                <p>
+                    Vanesa Ponce Covarrubias — Programador 
+                </p>
+
+            </article>
+
+            <!-- 12. TECNOLOGÍAS -->
+
+            <article class="doc-card reveal" id="tecnologias">
+
+                <span class="card-index">
+                    12 / TECNOLOGÍAS
+                </span>
+
+                <h3>Herramientas utilizadas</h3>
+
+                <p>
+                    <b>Motor del videojuego:</b>
+                    Unity.
+                </p>
+
+                <p>
+                    <b>Lenguajes del juego:</b>
+                    C#
+                </p>
+
+                <p>
+                    <b>Herramientas:</b>
+                    Visual studio 2022.
+                </p>
+
+                <p>
+                    <b>Sitio web:</b>
+                    HTML, CSS y JavaScript.
+                </p>
+
+            </article>
+
+            <!-- 13. CRÉDITOS -->
+
+            <article class="doc-card reveal" id="creditos">
+
+                <span class="card-index">
+                    13 / CRÉDITOS
+                </span>
+
+                <h3>Autores y recursos</h3>
+
+                <p>
+                    Jared Chavez Hernandez — Programador
+                </p>
+                <p>
+                    David Martínez Quinatanar — Diseñador
+                </p>
+                <p>
+                    Vanesa Ponce Covarrubias — Programador
+                </p>
+                </p>
+
+                <p>
+                    Fuentes de recursos: Unity Asset Store.
+                </p>
+
+                <p>
+                    Tipografías utilizadas:
+                    Barlow Condensed y DM Sans,
+                    obtenidas mediante Google Fonts.
+                </p>
+
+            </article>
+
+            <!-- 14. LICENCIAS -->
+
+            <article class="doc-card reveal" id="licencias">
+
+                <span class="card-index">
+                    14 / LICENCIAS
+                </span>
+
+                <h3>Condiciones de uso</h3>
+
+                <p>
+                      Eco Rider es un proyecto desarrollado con fines
+    académicos y educativos. El código fuente, los
+    diseños originales y los elementos propios del
+    videojuego se encuentran protegidos bajo la
+    modalidad de todos los derechos reservados.
+    No se permite su reproducción, modificación,
+    distribución o comercialización sin la
+    autorización previa de sus respectivos autores,
+    salvo los usos permitidos por la legislación
+    aplicable.
+                </p>
+
+                <p>
+                     Los recursos externos utilizados en Eco Rider,
+    como imágenes, modelos 3D, sonidos, música,
+    tipografías y herramientas de desarrollo,
+    pertenecen a sus respectivos autores y
+    propietarios. Su utilización está sujeta a
+    las condiciones establecidas en sus licencias
+    originales. Los recursos que requieran
+    atribución deberán incluir los créditos
+    correspondientes.
+                </p>
+
+                <p>
+                    No se concede ninguna licencia
+                    adicional por defecto.
+                </p>
+
+            </article>
+
+            <!-- 15. PRIVACIDAD -->
+
+            <article class="doc-card reveal" id="privacidad">
+
+                <span class="card-index">
+                    15 / PRIVACIDAD
+                </span>
+
+                <h3>Aviso de privacidad</h3>
+
+                <p>
+                    Eco Rider es un proyecto académico que respeta
+    la privacidad de sus usuarios. Tanto el videojuego
+    como su página web no solicitan, recopilan,
+    almacenan ni comparten datos personales de los
+    jugadores o visitantes. No es necesario crear
+    una cuenta, registrarse ni proporcionar información
+    personal para utilizar el videojuego.
+                </p>
+
+                <p>
+                    El videojuego funciona de manera local y no
+    requiere conexión a servidores externos para
+    su ejecución. No se utilizan herramientas de
+    análisis de usuarios, sistemas de seguimiento
+    ni servicios de recopilación de información.
+    Los archivos necesarios para el funcionamiento
+    del juego se encuentran almacenados localmente.
+                </p>
+
+                <p>
+                    El equipo de desarrollo de Eco Rider es
+    responsable de mantener la transparencia
+    respecto al funcionamiento del proyecto.
+    Debido a que no se recopilan datos personales,
+    no se realizan actividades de tratamiento
+    de información personal de los usuarios.
+    Para cualquier duda relacionada con la
+    privacidad, se puede contactar al equipo
+    mediante los medios indicados en la sección
+    de contacto de esta página.
+                </p>
+
+            </article>
+
+            <!-- 16. ADVERTENCIAS -->
+
+            <article class="doc-card reveal" id="advertencias">
+
+                <span class="card-index">
+                    16 / ADVERTENCIAS
+                </span>
+
+                <h3>Clasificación y contenido</h3>
+
+                <p>
+                    <b>Clasificación sugerida:</b>
+                     Eco Rider está recomendado para usuarios de
+    8 años en adelante. Es un videojuego desarrollado
+    con fines educativos y de entretenimiento,
+    cuyo contenido está orientado a promover
+    la conciencia ambiental mediante una experiencia
+    interactiva. No contiene violencia explícita,
+    lenguaje ofensivo ni contenido inapropiado
+    para menores de edad
+                </p>
+
+                <p>
+                    <b>Advertencias:</b>
+                     Eco Rider no incluye destellos luminosos
+    intensos, efectos visuales parpadeantes,
+    sonidos excesivamente fuertes ni elementos
+    gráficos sensibles. Su diseño busca ofrecer
+    una experiencia de juego accesible y agradable.
+    Se recomienda utilizar un volumen moderado,
+    mantener una distancia adecuada de la pantalla
+    y realizar descansos periódicos durante
+    sesiones prolongadas.
+                </p>
+
+            </article>
+
+            <!-- 17. DESCARGO DE RESPONSABILIDAD -->
+
+            <article class="doc-card reveal" id="responsabilidad">
+
+                <span class="card-index">
+                    17 / RESPONSABILIDAD
+                </span>
+
+                <h3>Proyecto académico</h3>
+
+                <p>
+                    EcoRider se presenta como proyecto
+                    académico con fines educativos.
+                </p>
+
+                <p>
+                    Se proporciona en su estado actual,
+                    sin garantías expresas de funcionamiento
+                    ininterrumpido o compatibilidad con
+                    todos los equipos, dentro de los
+                    límites permitidos por la legislación
+                    aplicable.
+                </p>
+
+            </article>
+
+            <!-- 18. CONTACTO -->
+
+            <article class="doc-card reveal" id="contacto">
+
+                <span class="card-index">
+                    18 / CONTACTO
+                </span>
+
+                <h3>Comentarios y errores</h3>
+
+                <p>
+                    Para reportar problemas técnicos,
+                    solicitar información o consultar
+                    asuntos legales, comunícate mediante:
+                </p>
+
+                <p>
+                    <strong>
+                        ecorideroficial@gmail.com
+                    </strong>
+                </p>
+
+            </article>
+
+            <!-- 19. USO DE INTELIGENCIA ARTIFICIAL -->
+
+            <article class="doc-card reveal" id="ia">
+
+                <span class="card-index">
+                    19 / USO DE IA
+                </span>
+
+               
+<h3>Declaración de inteligencia artificial</h3>
+
+<p>
+    <strong>Uso de inteligencia artificial:</strong>
+    Durante el desarrollo del proyecto Eco Rider,
+    se utilizaron herramientas de inteligencia
+    artificial, principalmente ChatGPT, como apoyo
+    en distintas etapas de investigación, diseño
+    y programación. 
+</p>
+
+<p>
+    <strong>Generación de imágenes:</strong>
+    Se utilizaron herramientas de inteligencia
+    artificial para crear y proponer recursos
+    gráficos relacionados con el videojuego
+    y su página web, incluyendo imágenes
+    ilustrativas y elementos visuales.
+</p>
+
+<p>
+    <strong>Investigación y documentación:</strong>
+    La inteligencia artificial se empleó como
+    herramienta de consulta para obtener
+    explicaciones, organizar información,
+    mejorar la redacción de contenidos y
+    apoyar la elaboración de documentación
+    técnica y académica relacionada con
+    el desarrollo de Eco Rider.
+</p>
+
+<p>
+    <strong>Desarrollo y revisión de código:</strong>
+    Se utilizó inteligencia artificial como
+    apoyo para generar propuestas de código,
+    identificar posibles errores, mejorar
+    estructuras de programación y optimizar
+    funcionalidades del proyecto, incluyendo
+    el desarrollo de la página web mediante
+    HTML, CSS y JavaScript.
+</p>
+
+<p>
+    <strong>Supervisión y responsabilidad:</strong>
+    La inteligencia artificial se utilizó
+    como una herramienta complementaria y
+    no como sustituto del trabajo del equipo.
+    Los integrantes del proyecto son
+    responsables de revisar, probar, adaptar
+    y validar los contenidos, recursos
+    gráficos y fragmentos de código
+    utilizados en la versión final de
+    Eco Rider.
+</p>
+
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ======================================
+     ANIMACIÓN DE LA CAMIONETA
+====================================== -->
+
+<div class="truck-animation-section" aria-hidden="true">
+
+    <div class="truck-track" id="truckTrack">
+
+        <img
+            src="./images/camioneta.png"
+            alt=""
+            class="truck-sprite"
+            id="truckSprite"
+        >
+
+    </div>
+
+</div>
+
+</main>
+
+<!-- ======================================
+     PIE DE PÁGINA
+====================================== -->
+
+<footer class="footer">
+
+    <div class="container footer-inner">
+
+        <a href="#inicio" class="logo">
+            <span class="logo-symbol">✦</span>
+            ECO<span>RIDER</span>
+        </a>
+
+        <p>
+            © <span id="year">2026</span> Eco Rider.
+            Todos los derechos reservados.
+        </p>
+
+        <a href="#inicio" class="back-top">
+            Volver arriba ↑
+        </a>
+
+    </div>
+
+</footer>
 
 </body>
 </html>
