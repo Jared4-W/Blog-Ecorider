@@ -5,8 +5,8 @@
 // CONFIGURACIÓN DEL SERVICE WORKER
 // ========================================
 
-const CACHE_NAME = "eco-rider-v5";
-const CACHE_IMAGES = "eco-rider-images-v5";
+const CACHE_NAME = "eco-rider-v6";
+const CACHE_IMAGES = "eco-rider-images-v6";
 
 // Archivos esenciales de la aplicación
 const ARCHIVOS_APP = [
